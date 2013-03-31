@@ -4,16 +4,21 @@ sdkdir = "/home/adorilson/workspace/adt-bundle-linux-x86/sdk"
 
 
 # Describe the LPS
-ALL = 'All features' # alias for all features
-PLAYLIST = 'Playlist Feature'
+ALL_FEATURES = 'All features' # alias for all features
+PLAYLIST_FEATURE = 'PLAYLIST'
 
 core = {
-    'resfiles':['values/strings.xml', # TODO filter by feature
-                'values/ContextMenuOptions.xml']# TODO filter by feature
+    # TODO filter all these files by feature
+    'srcfiles':['br/unb/mobileMedia/MMUnBActivity.java'],
+    'resfiles':['values/strings.xml', 
+                'values/ContextMenuOptions.xml',
+                
+                'layout/main.xml'
+                ]
 }
 
 features = {
-    PLAYLIST : {
+    PLAYLIST_FEATURE : {
         'srcfiles':['br/unb/mobileMedia/playlist/*.java',
                     
                     'br/unb/mobileMedia/core/domain/Playlist.java',
@@ -58,6 +63,8 @@ features = {
                     'menu/activity_play_list.xml',
                     'menu/activity_playlist_music_select.xml',
                     
+                    'drawable-hdpi/ic_playlist.png',
+                    'drawable-hdpi/ic_exit.png',
                     'drawable-mdpi/start.png',
                     'drawable-mdpi/stop.png'],
     }
@@ -65,5 +72,6 @@ features = {
 
 # Describe the products
 products = {
-    'MMUnBFull': (ALL)
+    'MMUnBFull': (ALL_FEATURES,),
+    'MMPlaylist': (PLAYLIST_FEATURE,)
 }
