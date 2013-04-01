@@ -17,41 +17,43 @@ core = {
                 ]
 }
 
+
+DEFAULT_SRC_DIR = 'br/unb/mobileMedia/'
 features = {
     PLAYLIST_FEATURE : {
-        'srcfiles':['br/unb/mobileMedia/playlist/*.java',
+        'srcfiles':[DEFAULT_SRC_DIR + 'playlist/*.java',
                     
-                    'br/unb/mobileMedia/core/domain/Playlist.java',
-                    'br/unb/mobileMedia/core/domain/Audio.java',
-                    'br/unb/mobileMedia/core/domain/AudioFormats.java',
-                    'br/unb/mobileMedia/core/domain/Author.java',
-                    'br/unb/mobileMedia/core/domain/MultimediaContent.java',
-                    'br/unb/mobileMedia/core/domain/MultimediaRelated.java',
+                    DEFAULT_SRC_DIR + 'core/domain/Playlist.java',
+                    DEFAULT_SRC_DIR + 'core/domain/Audio.java',
+                    DEFAULT_SRC_DIR + 'core/domain/AudioFormats.java',
+                    DEFAULT_SRC_DIR + 'core/domain/Author.java',
+                    DEFAULT_SRC_DIR + 'core/domain/MultimediaContent.java',
+                    DEFAULT_SRC_DIR + 'core/domain/MultimediaRelated.java',
                     
-                    'br/unb/mobileMedia/core/extractor/DefaultAudioExtractor.java',
-                    'br/unb/mobileMedia/core/extractor/MediaExtractor.java',
+                    DEFAULT_SRC_DIR + 'core/extractor/DefaultAudioExtractor.java',
+                    DEFAULT_SRC_DIR + 'core/extractor/MediaExtractor.java',
                     
-                    'br/unb/mobileMedia/util/FileUtility.java',
-                    'br/unb/mobileMedia/util/MMConstants.java',
+                    DEFAULT_SRC_DIR + 'util/FileUtility.java',
+                    DEFAULT_SRC_DIR + 'util/MMConstants.java',
                     
-                    'br/unb/mobileMedia/core/manager/Manager.java',
+                    DEFAULT_SRC_DIR + 'core/manager/Manager.java',
                     
-                    'br/unb/mobileMedia/core/db/AuthorDAO.java',
-                    'br/unb/mobileMedia/core/db/DBException.java',
-                    'br/unb/mobileMedia/core/db/DBFactory.java',
-                    'br/unb/mobileMedia/core/db/DBHelper.java',
-                    'br/unb/mobileMedia/core/db/DBConstants.java',
-                    'br/unb/mobileMedia/core/db/DefaultDBFactory.java',
-                    'br/unb/mobileMedia/core/db/DefaultPlaylistDAO.java',
-                    'br/unb/mobileMedia/core/db/DefaultAuthorDAO.java',
+                    DEFAULT_SRC_DIR + 'core/db/AuthorDAO.java',
+                    DEFAULT_SRC_DIR + 'core/db/DBException.java',
+                    DEFAULT_SRC_DIR + 'core/db/DBFactory.java',
+                    DEFAULT_SRC_DIR + 'core/db/DBHelper.java',
+                    DEFAULT_SRC_DIR + 'core/db/DBConstants.java',
+                    DEFAULT_SRC_DIR + 'core/db/DefaultDBFactory.java',
+                    DEFAULT_SRC_DIR + 'core/db/DefaultPlaylistDAO.java',
+                    DEFAULT_SRC_DIR + 'core/db/DefaultAuthorDAO.java',
                     
-                    'br/unb/mobileMedia/core/db/PlaylistDAO.java',
+                    DEFAULT_SRC_DIR + 'core/db/PlaylistDAO.java',
                     
-                    'br/unb/mobileMedia/core/view/AudioPlayerActivity.java',
-                    'br/unb/mobileMedia/core/view/AudioSelectActivity.java',
-                    'br/unb/mobileMedia/core/view/AudioPlayerArrayAdapter.java',
+                    DEFAULT_SRC_DIR + 'core/view/AudioPlayerActivity.java',
+                    DEFAULT_SRC_DIR + 'core/view/AudioSelectActivity.java',
+                    DEFAULT_SRC_DIR + 'core/view/AudioPlayerArrayAdapter.java',
                     
-                    'br/unb/mobileMedia/core/audioPlayer/AudioPlayerList.java'
+                    DEFAULT_SRC_DIR + 'core/audioPlayer/AudioPlayerList.java'
                     ],
         'resfiles':['layout/activity_audio_player.xml',
                     'layout/activity_play_list.xml',

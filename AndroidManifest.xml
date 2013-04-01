@@ -14,6 +14,7 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
+        
         <activity
             android:name=".MMUnBActivity"
             android:label="@string/app_name" >
@@ -23,43 +24,58 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- FEATURE BEGIN CORE -->
         <activity android:name=".view.video.VideoSelectionActivity" >
         </activity>
+        
         <activity android:name=".view.video.VideoListActivity" >
         </activity>
+        
+        <!-- FEATURE END CORE -->
+        
+        <!-- FEATURE BEGIN PLAYLIST -->
         <activity
             android:name=".playlist.MainPlaylistListActivity"
             android:label="@string/title_activity_play_list" >
         </activity>
+        <!-- FEATURE END PLAYLIST -->
+        
+        <!-- FEATURE BEGIN CORE -->
         <activity
             android:name=".core.view.AuthorListActivity"
             android:label="@string/title_activity_author_list" >
         </activity>
+        
         <activity
             android:name=".core.view.AudioExpandableListActivity"
             android:label="@string/title_activity_audio_table" >
         </activity>
+        
         <activity
             android:name=".core.view.AudioPlayerActivity"
             android:label="@string/title_activity_audio_player" >
         </activity>
+        
         <activity
             android:name=".core.view.AudioSelectActivity"
             android:label="@string/title_activity_select_activity" >
         </activity>
+        
         <activity
             android:name=".core.view.ShareListActivity"
             android:label="@string/title_activity_share_list" >
         </activity>
+        
         <activity
             android:name=".playlist.PlayListEditorActivity"
             android:label="@string/title_activity_playlist_editor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".playlist.MusicSelectActivity"
             android:label="@string/title_activity_music_select" >
@@ -69,6 +85,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- FEATURE END CORE -->
+        
     </application>
-
 </manifest>
