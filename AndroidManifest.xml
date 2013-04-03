@@ -36,6 +36,15 @@
         
         <!-- FEATURE BEGIN PLAYLIST -->
         <activity
+            android:name=".playlist.PlayListEditorActivity"
+            android:label="@string/title_activity_playlist_editor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
             android:name=".playlist.MainPlaylistListActivity"
             android:label="@string/title_activity_play_list" >
         </activity>
@@ -65,15 +74,6 @@
         <activity
             android:name=".core.view.ShareListActivity"
             android:label="@string/title_activity_share_list" >
-        </activity>
-        
-        <activity
-            android:name=".playlist.PlayListEditorActivity"
-            android:label="@string/title_activity_playlist_editor" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <activity
