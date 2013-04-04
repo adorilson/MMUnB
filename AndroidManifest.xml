@@ -50,6 +50,13 @@
         </activity>
         <!-- FEATURE END PLAYLIST -->
         
+        <!-- FEATURE BEGIN SHARE -->
+        <activity
+            android:name=".core.view.ShareListActivity"
+            android:label="@string/title_activity_share_list" >
+        </activity>
+        <!-- FEATURE END SHARE -->
+        
         <!-- FEATURE BEGIN CORE -->
         <activity
             android:name=".core.view.AuthorListActivity"
@@ -69,11 +76,6 @@
         <activity
             android:name=".core.view.AudioSelectActivity"
             android:label="@string/title_activity_select_activity" >
-        </activity>
-        
-        <activity
-            android:name=".core.view.ShareListActivity"
-            android:label="@string/title_activity_share_list" >
         </activity>
         
         <activity

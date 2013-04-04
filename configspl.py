@@ -2,10 +2,10 @@
 # Some param to run soproly
 sdkdir = "/home/adorilson/workspace/adt-bundle-linux-x86/sdk"
 
-
 # Describe the LPS
 ALL_FEATURES = 'All features' # alias for all features
 PLAYLIST_FEATURE = 'PLAYLIST'
+SHARE_FEATURE = 'SHARE'
 
 core = {
     # TODO filter all these files by feature
@@ -69,11 +69,28 @@ features = {
                     'drawable-hdpi/ic_exit.png',
                     'drawable-mdpi/start.png',
                     'drawable-mdpi/stop.png'],
+    },
+    SHARE_FEATURE : {
+        'srcfiles': [DEFAULT_SRC_DIR + 'core/view/ShareListActivity.java',],
+        'resfiles': ['layout/activity_share_list.xml',
+        
+                      'drawable-hdpi/ic_exit.png',
+                      'drawable-mdpi/twitter.png',
+                      'drawable-ldpi/twitter.png',
+                      'drawable-hdpi/twitter.png',
+                      'drawable-hdpi/facebook.png',
+                      'drawable-ldpi/facebook.png',
+                      'drawable-mdpi/facebook.png',
+        ],
+        'libfiles': ['socialauth*']
+        
     }
 }
 
 # Describe the products
 products = {
     'MMUnBFull': (ALL_FEATURES,),
-    'MMPlaylist': (PLAYLIST_FEATURE,)
+    'MMPlaylist': (PLAYLIST_FEATURE,),
+    'MMShare': (SHARE_FEATURE,),
+    'MMPlaylist_and_Share': (PLAYLIST_FEATURE, SHARE_FEATURE),
 }
