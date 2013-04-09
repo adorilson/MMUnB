@@ -13,7 +13,12 @@ core = {
     'resfiles':['values/strings.xml', 
                 'values/ContextMenuOptions.xml',
                 
-                'layout/main.xml'
+                'layout/main.xml',
+
+                'drawable-hdpi/ic_launcher.png',
+                'drawable-ldpi/ic_launcher.png',
+                'drawable-mdpi/ic_launcher.png',                    
+                'drawable-xhdpi/ic_launcher.png'
                 ]
 }
 
@@ -66,9 +71,10 @@ features = {
                     'menu/activity_playlist_music_select.xml',
                     
                     'drawable-hdpi/ic_playlist.png',
-                    'drawable-hdpi/ic_exit.png',
+                    'drawable-hdpi/ic_exit.png',                   
                     'drawable-mdpi/start.png',
-                    'drawable-mdpi/stop.png'],
+                    'drawable-mdpi/stop.png'
+                    ],
     },
     SHARE_FEATURE : {
         'srcfiles': [DEFAULT_SRC_DIR + 'core/view/ShareListActivity.java',],
