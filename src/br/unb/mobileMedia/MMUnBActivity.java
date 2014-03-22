@@ -41,7 +41,9 @@ public class MMUnBActivity extends FragmentActivity implements OnItemClickedCall
 			case R.id.btn_synchronize:
 				try {
 					Manager.instance().synchronizeMedia(getApplicationContext());
-					Toast.makeText(getApplicationContext(), R.string.message_synchronization_finished, Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), 
+									R.string.message_synchronization_finished, 
+									Toast.LENGTH_LONG).show();
 				}
 				catch(DBException e) {
 					Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
