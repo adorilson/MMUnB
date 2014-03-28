@@ -26,16 +26,14 @@ public class AuthorListFragment extends ListFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getActivity().setTitle("All artists");
-		Toast.makeText(getActivity(), "Creating AuthorListFragment", Toast.LENGTH_LONG)
-		.show();
 		try {
 			List<Author> authors = Manager.instance().listAuthors(getActivity().getApplicationContext());
 
 			if (authors == null || authors.size() == 0) {
 				String[] values = new String[] { "No author found." };
 				
-				//int layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
-			      //        android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
+				// This code is verbose, because it is a didatic example.
+				// In others cases, you can just use the SIMPLE_LIST_ITEM_LAYOUT constant
 				int layout = 0;
 				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
 					layout = android.R.layout.simple_list_item_activated_1;
@@ -45,10 +43,7 @@ public class AuthorListFragment extends ListFragment {
 				ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), layout, values);
 				setListAdapter(adapter);
 			} else {
-				Toast.makeText(getActivity(), "PREVIOUS HONEYCOMB: ", Toast.LENGTH_LONG)
-				.show();
-				AuthorArrayAdapter adapter = new AuthorArrayAdapter(getActivity(),
-						authors);
+				AuthorArrayAdapter adapter = new AuthorArrayAdapter(getActivity(), authors);
 				setListAdapter(adapter);
 			}
 		} catch (DBException e) {
