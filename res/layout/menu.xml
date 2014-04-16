@@ -16,7 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_playlist"
-        android:text="@string/btn_play_list" />
+        android:text="@string/btn_play_list"
+        android:visibility="@integer/feature_playlist"
+        />
 
     <Button
         android:id="@+id/btn_open_music_player"
