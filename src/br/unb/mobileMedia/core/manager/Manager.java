@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import android.R;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -68,6 +69,8 @@ public class Manager {
 	 * @param context the application context.
 	 */
 	public void synchronizeMedia(Context context) throws DBException {
+		
+		
 		sync_audio(context);
 
 		sync_video(context);

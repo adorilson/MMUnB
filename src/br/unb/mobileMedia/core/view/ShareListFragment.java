@@ -85,8 +85,11 @@ public class ShareListFragment extends Fragment{
 		ResponseListener listener = new ResponseListener(conteudo,adapter);
 		adapter.setListener(listener);
 		
-		adapter.addProvider(Provider.FACEBOOK, br.unb.mobileMedia.R.drawable.facebook);
-		adapter.addProvider(Provider.TWITTER, br.unb.mobileMedia.R.drawable.twitter);
+		if (getActivity().getResources().getBoolean(R.bool.feature_share_facebook))
+			adapter.addProvider(Provider.FACEBOOK, br.unb.mobileMedia.R.drawable.facebook);
+		
+		if (getActivity().getResources().getBoolean(R.bool.feature_share_twitter))
+			adapter.addProvider(Provider.TWITTER, br.unb.mobileMedia.R.drawable.twitter);
 		
 		adapter.enable(btn);
 	}
