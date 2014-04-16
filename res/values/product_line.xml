@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <bool name="feature_share">false</bool>
     <bool name="feature_share_facebook">true</bool>
     <bool name="feature_share_twitter">false</bool>
 </resources>

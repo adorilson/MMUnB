@@ -32,6 +32,9 @@ public class MenuFragment extends Fragment {
 		button = ((Button) view.findViewById(R.id.btn_share));
 		button.setOnClickListener(new OnClickMenuItemListener());
 		
+		if (!getActivity().getResources().getBoolean(R.bool.feature_share))
+			button.setVisibility(View.GONE);
+		
 		button = ((Button) view.findViewById(R.id.btn_synchronize));
 		button.setOnClickListener(new OnClickMenuItemListener());
 		
