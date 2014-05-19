@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- See: http://developer.android.com/reference/android/view/View.html#attr_android:visibility 
+        0 - Visible on screen; the default value.
+        1 - Not displayed, but taken into account during layout (space is left for it).
+        2 - Completely hidden, as if the view had not been added. 
+    -->
+    <integer name="feature_playlist">0</integer>
+    
+    <bool name="feature_share">true</bool>
+    <bool name="feature_share_facebook">true</bool>
+    <bool name="feature_share_twitter">true</bool>
+</resources>

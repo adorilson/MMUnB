@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <integer name="feature_playlist">2</integer>
-    
-    <bool name="feature_share">false</bool>
-    <bool name="feature_share_facebook">true</bool>
-    <bool name="feature_share_twitter">false</bool>
-</resources>
