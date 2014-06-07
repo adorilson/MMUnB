@@ -29,6 +29,7 @@ import br.unb.mobileMedia.core.domain.Video;
 import br.unb.mobileMedia.core.domain.VideoFormats;
 import br.unb.mobileMedia.core.extractor.DefaultAudioExtractor;
 import br.unb.mobileMedia.core.extractor.DefaultVideoExtractor;
+import br.unb.mobileMedia.core.extractor.ExtractorFactory;
 import br.unb.mobileMedia.core.extractor.MediaExtractor;
 import br.unb.mobileMedia.util.FileUtility;
 
@@ -70,44 +71,16 @@ public class Manager {
 	 */
 	public void synchronizeMedia(Context context) throws DBException {
 		
-		
-		sync_audio(context);
-
-		sync_video(context);
+		ExtractorFactory fac = new ExtractorFactory(context);
+        List<MediaExtractor> extrs = fac.createExtractor();
+        
+        for(MediaExtractor extractor: extrs){
+        	List<Author> authors = (List<Author>) extractor.processFiles();
+    		saveAuthor(context, authors);
+        }
 	}
 
-	private void sync_video(Context context) throws DBException{
-		final List<File> allVideos = new ArrayList<File>();
-
-		for(VideoFormats format : VideoFormats.values()) {
-			allVideos.addAll(FileUtility.listFiles(new File(Environment
-					.getExternalStorageDirectory().getPath() + "/Movies/"),
-					format.getFormatAsString()));
-		}
-		MediaExtractor extractor = new DefaultVideoExtractor(context);
-
-		List<Author> authors = (List<Author>) extractor.processFiles(allVideos);
-
-		saveAuthor(context, authors);
-
-	}
-
-	private void sync_audio(Context context) throws DBException {
-		final List<File> allMusics = new ArrayList<File>();
-
-		for(AudioFormats format : AudioFormats.values()) {
-			allMusics.addAll(FileUtility.listFiles(new File(Environment
-					.getExternalStorageDirectory().getPath() + "/Music/"),
-					format.getFormatAsString()));
-		}
-
-		MediaExtractor extractor = new DefaultAudioExtractor(context);
-
-		List<Author> authors = (List<Author>) extractor.processFiles(allMusics);
-
-		saveAuthor(context, authors);
-	}
-
+	
 	private void saveAuthor(Context context, List<Author> authors) throws DBException {
 		for(Author author: authors) {
 			AuthorDAO dao = DBFactory.factory(context).createAuthorDAO();

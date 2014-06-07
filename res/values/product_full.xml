@@ -11,4 +11,7 @@
     <bool name="feature_share">true</bool>
     <bool name="feature_share_facebook">true</bool>
     <bool name="feature_share_twitter">true</bool>
+    
+    <bool name="feature_audio">true</bool>
+    <bool name="feature_video">true</bool>
 </resources>

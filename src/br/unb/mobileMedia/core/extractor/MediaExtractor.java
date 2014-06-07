@@ -3,6 +3,7 @@ package br.unb.mobileMedia.core.extractor;
 import java.io.File;
 import java.util.List;
 
+import android.content.Context;
 import br.unb.mobileMedia.core.domain.MultimediaRelated;
 
 /**
@@ -20,6 +21,10 @@ public interface MediaExtractor {
 	 * @param audioFiles input files used to obtain audio data
 	 * @return a list of audio data obtained from <i>audioFiles</i>.
 	 */
-	public List<? extends MultimediaRelated> processFiles(List<File> audioFiles);
+	public List<? extends MultimediaRelated> processFiles();
+	
+	public Context getContext();
+	
+	public void setContext(Context context);
 
 }

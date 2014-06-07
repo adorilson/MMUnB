@@ -11,10 +11,13 @@ import android.content.Context;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 import br.unb.mobileMedia.core.domain.Audio;
 import br.unb.mobileMedia.core.domain.Author;
 import br.unb.mobileMedia.core.domain.Video;
+import br.unb.mobileMedia.core.domain.VideoFormats;
+import br.unb.mobileMedia.util.FileUtility;
 
 /**
  * A default implementation of an video extractor.
@@ -45,12 +48,24 @@ public class DefaultVideoExtractor implements MediaExtractor {
 	 */
 	public DefaultVideoExtractor(Context context) {
 		this.context = context;
+		
 	}
 
 	/**
 	 * @see MediaExtractor#processFile(File[])
 	 */
-	public List<Author> processFiles(List<File> videoFiles) {
+	public List<Author> processFiles() {
+		
+		final List<File> allVideos = new ArrayList<File>();
+
+		for(VideoFormats format : VideoFormats.values()) {
+			allVideos.addAll(FileUtility.listFiles(new File(Environment
+					.getExternalStorageDirectory().getPath() + "/Movies/"),
+					format.getFormatAsString()));
+		}
+		
+		List<File> videoFiles = allVideos;
+		
 		Map<Integer, Author> authors = new HashMap<Integer, Author>();
 
 		MediaMetadataRetriever mmr = new MediaMetadataRetriever();
@@ -95,6 +110,14 @@ public class DefaultVideoExtractor implements MediaExtractor {
 			authors.put(author.getId(), author);
 		}
 		return new ArrayList<Author>(authors.values());
+	}
+
+	public Context getContext() {
+		return this.context;
+	}
+
+	public void setContext(Context context) {
+		this.context = context;
 	}
 
 }

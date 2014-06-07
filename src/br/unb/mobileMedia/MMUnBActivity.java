@@ -30,6 +30,7 @@ public class MMUnBActivity extends FragmentActivity implements OnItemClickedCall
 			transaction.add(R.id.content, new ContentFragment());
 		}
 		transaction.commit();
+
 	}
 	
 	public void onItemClicked(int menuItem){

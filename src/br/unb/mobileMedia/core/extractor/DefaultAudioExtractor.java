@@ -11,9 +11,12 @@ import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 import br.unb.mobileMedia.core.domain.Audio;
+import br.unb.mobileMedia.core.domain.AudioFormats;
 import br.unb.mobileMedia.core.domain.Author;
+import br.unb.mobileMedia.util.FileUtility;
 
 /**
  * A defaul implementation of an audio extractor.
@@ -43,7 +46,18 @@ public class DefaultAudioExtractor implements MediaExtractor {
 	/**
 	 * @see MediaExtractor#processFile(File[])
 	 */
-	public List<Author> processFiles(List<File> audioFiles) {
+	public List<Author> processFiles() {
+		
+		final List<File> allMusics = new ArrayList<File>();
+
+		for(AudioFormats format : AudioFormats.values()) {
+			allMusics.addAll(FileUtility.listFiles(new File(Environment
+					.getExternalStorageDirectory().getPath() + "/Music/"),
+					format.getFormatAsString()));
+		}
+
+		List<File> audioFiles = allMusics;
+		
 		Map<Integer, Author> authors = new HashMap<Integer, Author>();
 
 		MediaMetadataRetriever mmr = new MediaMetadataRetriever();
@@ -106,4 +120,13 @@ public class DefaultAudioExtractor implements MediaExtractor {
 					}
 				});
 	}
+	
+	public Context getContext() {
+		return this.context;
+	}
+
+	public void setContext(Context context) {
+		this.context = context;
+	}
+
 }
