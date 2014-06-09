@@ -7,8 +7,13 @@
         2 - Completely hidden, as if the view had not been added. 
     -->
     <integer name="feature_playlist">0</integer>
+    <integer name="feature_music_player">0</bool>
+    <integer name="feature_artists">0</bool>
     
     <bool name="feature_share">true</bool>
     <bool name="feature_share_facebook">true</bool>
     <bool name="feature_share_twitter">true</bool>
+    
+    <bool name="feature_audio">true</bool>
+    <bool name="feature_video">true</bool>
 </resources>

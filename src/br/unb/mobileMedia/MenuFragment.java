@@ -22,16 +22,18 @@ public class MenuFragment extends Fragment {
 		
 		button = ((Button) view.findViewById(R.id.btn_list_authors));
 		button.setOnClickListener(new OnClickMenuItemListener());
+		button.setVisibility(getActivity().getResources().getInteger(R.integer.feature_artists));
 		
 		button = ((Button) view.findViewById(R.id.btn_play_list));
 		button.setOnClickListener(new OnClickMenuItemListener());
+		button.setVisibility(getActivity().getResources().getInteger(R.integer.feature_playlist));
 		
 		button = ((Button) view.findViewById(R.id.btn_open_music_player));
 		button.setOnClickListener(new OnClickMenuItemListener());
+		button.setVisibility(getActivity().getResources().getInteger(R.integer.feature_music_player));
 		
 		button = ((Button) view.findViewById(R.id.btn_share));
 		button.setOnClickListener(new OnClickMenuItemListener());
-		
 		if (!getActivity().getResources().getBoolean(R.bool.feature_share))
 			button.setVisibility(View.GONE);
 		
