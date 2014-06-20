@@ -22,6 +22,8 @@ public class MenuFragment extends Fragment {
 		
 		button = ((Button) view.findViewById(R.id.btn_list_authors));
 		button.setOnClickListener(new OnClickMenuItemListener());
+		
+		// We use the visible property to treat the features here
 		button.setVisibility(getActivity().getResources().getInteger(R.integer.feature_artists));
 		
 		button = ((Button) view.findViewById(R.id.btn_play_list));
