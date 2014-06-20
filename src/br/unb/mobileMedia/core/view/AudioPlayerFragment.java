@@ -21,6 +21,8 @@ public class AudioPlayerFragment extends Fragment{
 
 	public static final String EXECUTION_LIST = "EXECUTION_LIST";
 
+	// TODO Put the "if feature" here ????
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,7 +31,8 @@ public class AudioPlayerFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		getActivity().setTitle(R.string.title_activity_audio_player);
+		
+		
 		return inflater.inflate(R.layout.activity_audio_player, container, false);
 	}
 	
@@ -37,7 +40,13 @@ public class AudioPlayerFragment extends Fragment{
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		
-		createUI();
+		// Treat the music player feature
+		if (getActivity().getResources().getInteger(R.integer.feature_music_player)==View.VISIBLE){
+			getActivity().setTitle(R.string.title_activity_audio_player);
+			createUI();
+		}else{
+			getActivity().getSupportFragmentManager().popBackStack();
+		}
 	}
 	
 	private void createUI() {

@@ -91,8 +91,15 @@ public class AudioExpandableListFragment extends ExpandableListFragment {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v,
 			int groupPosition, int childPosition, long id) {
-	
-		Toast.makeText(getActivity().getApplicationContext(), "Abrindo player...", Toast.LENGTH_SHORT).show();
+		
+		// Just open the audio player if the feature is presented
+		if (getActivity().getResources().getInteger(R.integer.feature_music_player)!=View.VISIBLE){
+			Toast.makeText(getActivity().getApplicationContext(), "No music player feature", Toast.LENGTH_SHORT).show();
+			return false;
+		}else{
+			Toast.makeText(getActivity().getApplicationContext(), "Opening music player", Toast.LENGTH_SHORT).show();
+		}
+		
 		try {
 			String albumName = groupList.get(groupPosition).get(ALBUM);
 			List<Audio> album = albuns.get(albumName);
