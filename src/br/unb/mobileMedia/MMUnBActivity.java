@@ -18,14 +18,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
-public class MMUnBActivity extends Activity implements OnItemClickedCallBack{
+public class MMUnBActivity extends FragmentActivity implements OnItemClickedCallBack{
 
     private void configLayout(){
         MenuFragment menuFrag = new MenuFragment();
 
+    // Enable/disable the line below to see a UsesFragmentManager check in action
+    // FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 /*
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
         if (findViewById(R.id.main)!=null){
             transaction.add(R.id.main, menuFrag);
         }else{
@@ -44,7 +44,7 @@ public class MMUnBActivity extends Activity implements OnItemClickedCallBack{
 
         configLayout();
 
-
+		// Enable/disable the line below to see a UsesFragmentManager check in action
         //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 	}
 	
