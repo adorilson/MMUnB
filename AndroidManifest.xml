@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
-        android:targetSdkVersion="16" />
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19" />
 
     <!-- Indicam que a aplicação tem acesso ao envio e leitura de SMS -->
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -19,16 +19,19 @@
         android:label="@string/app_name" >
         <activity
             android:name=".MMUnBActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".view.video.VideoSelectionActivity" >
+        <activity android:name=".videoplayer.view.video.VideoSelectionActivity" >
         </activity>
-        <activity android:name=".view.video.VideoListActivity" >
+        <activity android:name=".videoplayer.view.video.VideoListActivity" >
         </activity>
         <activity
             android:name=".playlist.MainPlaylistListActivity"
@@ -54,23 +57,17 @@
             android:name=".core.view.ShareListActivity"
             android:label="@string/title_activity_share_list" >
         </activity>
+
         <activity
-            android:name=".playlist.PlayListEditorActivity"
-            android:label="@string/title_activity_playlist_editor" >
+                android:name=".playlist.MusicSelectActivity"
+                android:label="@string/title_activity_music_select" >
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".playlist.MusicSelectActivity"
-            android:label="@string/title_activity_music_select" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            -->
         </activity>
     </application>
 
